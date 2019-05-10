@@ -12,13 +12,29 @@ import XCTest
 class IOSGeniusPlazaTests: XCTestCase {
     
     var sut: NetworkService?
+    
+    func testGetMovieFromServer() {
+        //In a TableView, display the name, image and media type of the iTunes media.
+        let expectation = XCTestExpectation(description: "wait at least 2 to second reach backend for movies")
+        sut?.getMovies(completion: { (result) in
+            switch result {
+            case .failure(_):
+                XCTFail()
+            case .success(let movies):
+                XCTAssertEqual(10, movies.count)
+            }
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 2)
+    }
+    
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = NetworkService()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
 
 }

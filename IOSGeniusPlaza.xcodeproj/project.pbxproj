@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		04F0732A2284BD0800B807ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F073292284BD0800B807ED /* AppDelegate.swift */; };
-		04F0732C2284BD0800B807ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0732B2284BD0800B807ED /* ViewController.swift */; };
+		04F0732C2284BD0800B807ED /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0732B2284BD0800B807ED /* HomeTableViewController.swift */; };
 		04F073312284BD0900B807ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F073302284BD0900B807ED /* Assets.xcassets */; };
 		04F073342284BD0900B807ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F073322284BD0900B807ED /* LaunchScreen.storyboard */; };
 		04F0733F2284BD0900B807ED /* IOSGeniusPlazaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0733E2284BD0900B807ED /* IOSGeniusPlazaTests.swift */; };
 		04F0734A2284BD8400B807ED /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F073492284BD8400B807ED /* NetworkService.swift */; };
+		04F0734D2284C5B800B807ED /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0734C2284C5B800B807ED /* Movie.swift */; };
+		04F0734F2284E46D00B807ED /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0734E2284E46D00B807ED /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +30,7 @@
 /* Begin PBXFileReference section */
 		04F073262284BD0800B807ED /* IOSGeniusPlaza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSGeniusPlaza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F073292284BD0800B807ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04F0732B2284BD0800B807ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04F0732B2284BD0800B807ED /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		04F073302284BD0900B807ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04F073332284BD0900B807ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04F073352284BD0900B807ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		04F0733E2284BD0900B807ED /* IOSGeniusPlazaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSGeniusPlazaTests.swift; sourceTree = "<group>"; };
 		04F073402284BD0900B807ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F073492284BD8400B807ED /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		04F0734C2284C5B800B807ED /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		04F0734E2284E46D00B807ED /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				04F073292284BD0800B807ED /* AppDelegate.swift */,
-				04F0732B2284BD0800B807ED /* ViewController.swift */,
+				04F0732B2284BD0800B807ED /* HomeTableViewController.swift */,
+				04F0734E2284E46D00B807ED /* ViewModel.swift */,
 				04F073492284BD8400B807ED /* NetworkService.swift */,
+				04F0734B2284C5AC00B807ED /* Models */,
 				04F073302284BD0900B807ED /* Assets.xcassets */,
 				04F073322284BD0900B807ED /* LaunchScreen.storyboard */,
 				04F073352284BD0900B807ED /* Info.plist */,
@@ -94,6 +100,14 @@
 				04F073402284BD0900B807ED /* Info.plist */,
 			);
 			path = IOSGeniusPlazaTests;
+			sourceTree = "<group>";
+		};
+		04F0734B2284C5AC00B807ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				04F0734C2284C5B800B807ED /* Movie.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,8 +210,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F0732C2284BD0800B807ED /* ViewController.swift in Sources */,
+				04F0734F2284E46D00B807ED /* ViewModel.swift in Sources */,
+				04F0732C2284BD0800B807ED /* HomeTableViewController.swift in Sources */,
 				04F0734A2284BD8400B807ED /* NetworkService.swift in Sources */,
+				04F0734D2284C5B800B807ED /* Movie.swift in Sources */,
 				04F0732A2284BD0800B807ED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
