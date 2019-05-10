@@ -12,6 +12,12 @@ enum MediaType {
     case podCast
 }
 
+struct MediaModel {
+    let name: String
+    let image: UIImage
+    let mediaType: MediaType
+}
+
 struct Movie {
     let movieName: String
     let publisher: String

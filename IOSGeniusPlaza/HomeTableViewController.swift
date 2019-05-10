@@ -9,28 +9,34 @@
 import UIKit
 
 class HomeTableViewController: UITableViewController {
-    let cellID = "cellID"
-    var viewModel: ViewModel?
+    
+    var viewModel: HomeViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.register(MovieCell.self, forCellReuseIdentifier: HomeViewModel.cellID)
         setupViewModel()
     }
     
     func setupViewModel() {
-        let networkService = NetworkService()
-        viewModel = ViewModel(networkService: networkService)
+        viewModel = HomeViewModel()
         viewModel?.loadMovies(completion: { [unowned self] (err) in
             if err != nil {
-                let alert = UIAlertController(title: "Unable to connect to internet", message: "Please try again later", preferredStyle: .alert)
-                let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
-                alert.addAction(dismissAction)
+                let alert = self.createConnectionAlertController()
+                self.present(alert, animated: true, completion: nil)
             } else {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
             }
         })
+    }
+    
+    func createConnectionAlertController() -> UIAlertController {
+        let alert = UIAlertController(title: "Unable to connect to internet", message: "Please try again later", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        alert.addAction(dismissAction)
+        return alert
     }
     
 }
@@ -41,8 +47,12 @@ extension HomeTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        cell.backgroundColor = .blue
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewModel.cellID, for: indexPath) as? MovieCell
+        cell?.viewModel = viewModel?.MediaViewModelAtIndex(indexPath.row)
+        return cell ?? UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 }

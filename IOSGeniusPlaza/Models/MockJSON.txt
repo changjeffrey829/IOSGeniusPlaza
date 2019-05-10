@@ -1,0 +1,211 @@
+{
+"feed": {
+"title": "Top Films",
+"id": "https:\/\/rss.itunes.apple.com\/api\/v1\/us\/movies\/top-movies\/all\/10\/explicit.json",
+"author": {
+"name": "iTunes Store",
+"uri": "http:\/\/wwww.apple.com\/us\/itunes\/"
+},
+"links": [
+{
+"self": "https:\/\/rss.itunes.apple.com\/api\/v1\/us\/movies\/top-movies\/all\/10\/explicit.json"
+},
+{
+"alternate": "https:\/\/itunes.apple.com\/WebObjects\/MZStore.woa\/wa\/viewTop?genreId=33&popId=15"
+}
+],
+"copyright": "Copyright \u00a9 2018 Apple Inc. All rights reserved.",
+"country": "us",
+"icon": "http:\/\/itunes.apple.com\/favicon.ico",
+"updated": "2019-05-08T01:54:40.000-07:00",
+"results": [
+{
+"artistName": "Lions Gate Films, Inc.",
+"id": "1238363034",
+"releaseDate": "2017-05-23",
+"name": "John Wick - Double Feature",
+"kind": "movieBundle",
+"artistId": "345356312",
+"contentAdvisoryRating": "Explicit",
+"artistUrl": "https:\/\/itunes.apple.com\/us\/artist\/lions-gate-films-inc\/345356312",
+"artworkUrl100": "https:\/\/is4-ssl.mzstatic.com\/image\/thumb\/Features117\/v4\/b4\/29\/37\/b4293780-5eaf-bd66-4581-58a10b50298a\/mza_6666934204090634432.lsr\/200x200bb.png",
+"genres": [
+{
+"genreId": "4401",
+"name": "Action & Adventure",
+"url": "https:\/\/itunes.apple.com\/us\/genre\/id4401"
+},
+{
+"genreId": "33",
+"name": "Movies",
+"url": "https:\/\/itunes.apple.com\/us\/genre\/id33"
+},
+{
+"genreId": "4416",
+"name": "Thriller",
+"url": "https:\/\/itunes.apple.com\/us\/genre\/id4416"
+}
+],
+"url": "https:\/\/itunes.apple.com\/us\/movie-collection\/john-wick-double-feature\/id1238363034"
+},
+{
+"artistName": "Christopher McQuarrie",
+"id": "1406515547",
+"releaseDate": "2018-07-27",
+"name": "Mission: Impossible - Fallout",
+"kind": "movie",
+"copyright": "\u00a9 MMXVIII Paramount Pictures Corporation. All Rights Reserved.",
+"artworkUrl100": "https:\/\/is5-ssl.mzstatic.com\/image\/thumb\/Video128\/v4\/5e\/e4\/8d\/5ee48d30-810b-5391-2801-5e96644dae4a\/pr_source.lsr\/200x200bb.png",
+"genres": [
+{
+"genreId": "4401",
+"name": "Action & Adventure",
+"url": "https:\/\/itunes.apple.com\/us\/genre\/id4401"
+}
+],
+"url": "https:\/\/itunes.apple.com\/us\/movie\/mission-impossible-fallout\/id1406515547"
+},
+{
+"artistName": "Dean Deblois",
+"id": "1451994559",
+"releaseDate": "2019-02-22",
+"name": "How to Train Your Dragon: The Hidden World",
+"kind": "movie",
+"copyright": "\u00a9 DreamWorks How to Train Your Dragon  2018 DreamWorks Animation LLC. All Rights Reserved.",
+"artworkUrl100": "https:\/\/is5-ssl.mzstatic.com\/image\/thumb\/Video113\/v4\/c6\/4a\/26\/c64a2686-208d-6a0f-5a92-0e54868fcc74\/pr_source.lsr\/200x200bb.png",
+"genres": [
+{
+"genreId": "4410",
+"name": "Kids & Family",
+"url": "https:\/\/itunes.apple.com\/us\/genre\/id4410"
+}
+],
+"url": "https:\/\/itunes.apple.com\/us\/movie\/how-to-train-your-dragon-the-hidden-world\/id1451994559"
+},
+{
+"artistName": "Hans Petter Moland",
+"id": "1451384896",
+"releaseDate": "2019-02-08",
+"name": "Cold Pursuit",
+"kind": "movie",
+"copyright": "\u00a9 2019 Studiocanal SAS. All Rights Reserved",
+"contentAdvisoryRating": "Explicit",
+"artworkUrl100": "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Video113\/v4\/0c\/ce\/ac\/0cceac7d-a0b1-62cc-7c10-936ff78d21ff\/pr_source.lsr\/200x200bb.png",
+"genres": [
+{
+"genreId": "4401",
+"name": "Action & Adventure",
+"url": "https:\/\/itunes.apple.com\/us\/genre\/id4401"
+}
+],
+"url": "https:\/\/itunes.apple.com\/us\/movie\/cold-pursuit\/id1451384896"
+},
+{
+"artistName": "Adam Shankman",
+"id": "1449958490",
+"releaseDate": "2019-02-07",
+"name": "What Men Want",
+"kind": "movie",
+"copyright": "\u00a9 2019 Paramount Players, a Division of Paramount Pictures. All Rights Reserved.",
+"contentAdvisoryRating": "Explicit",
+"artworkUrl100": "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Video123\/v4\/80\/71\/ea\/8071ead0-711a-6cba-ba7b-3073cde01b24\/pr_source.lsr\/200x200bb.png",
+"genres": [
+{
+"genreId": "4404",
+"name": "Comedy",
+"url": "https:\/\/itunes.apple.com\/us\/genre\/id4404"
+}
+],
+"url": "https:\/\/itunes.apple.com\/us\/movie\/what-men-want\/id1449958490"
+},
+{
+"artistName": "Mike Mitchell",
+"id": "1450601534",
+"releaseDate": "2019-02-08",
+"name": "The LEGO Movie 2: The Second Part",
+"kind": "movie",
+"copyright": "\u00a9 2019 Warner Bros. Entertainment Inc. LEGO, the LEGO logo, the minifigure and the brick and knob configuration are trademarks of The LEGO Group. 2019 The LEGO Group.",
+"artworkUrl100": "https:\/\/is5-ssl.mzstatic.com\/image\/thumb\/Video124\/v4\/a1\/f7\/7f\/a1f77f25-bcc3-7c6f-9ca6-69940606f4b2\/pr_source.lsr\/200x200bb.png",
+"genres": [
+{
+"genreId": "4410",
+"name": "Kids & Family",
+"url": "https:\/\/itunes.apple.com\/us\/genre\/id4410"
+}
+],
+"url": "https:\/\/itunes.apple.com\/us\/movie\/the-lego-movie-2-the-second-part\/id1450601534"
+},
+{
+"artistName": "Fede \u00c1lvarez",
+"id": "1440275512",
+"releaseDate": "2018-11-09",
+"name": "The Girl In the Spider's Web",
+"kind": "movie",
+"copyright": "\u00a9 2018 Columbia Pictures Industries, Inc. and Metro-Goldwyn-Mayer Pictures Inc. and Monarchy Enterprises S.\u00e1 r.l. and Regency Entertainment (USA), Inc. All Rights Reserved.",
+"contentAdvisoryRating": "Explicit",
+"artworkUrl100": "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Video124\/v4\/12\/7b\/83\/127b83bd-602f-91ad-8f34-3dc3130e719d\/pr_source.lsr\/200x200bb.png",
+"genres": [
+{
+"genreId": "4401",
+"name": "Action & Adventure",
+"url": "https:\/\/itunes.apple.com\/us\/genre\/id4401"
+}
+],
+"url": "https:\/\/itunes.apple.com\/us\/movie\/the-girl-in-the-spiders-web\/id1440275512"
+},
+{
+"artistName": "Steven Knight",
+"id": "1449065699",
+"releaseDate": "2019-01-25",
+"name": "Serenity (2019)",
+"kind": "movie",
+"copyright": "\u00a9 2018 Aviron Pictures, LLC. All Rights Reserved.",
+"contentAdvisoryRating": "Explicit",
+"artworkUrl100": "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Video113\/v4\/87\/51\/cb\/8751cb9c-0fcf-6ffd-7dbc-2229aa6d4286\/89J44_MLNA_WW_Serenity_2000x3000.lsr\/200x200bb.png",
+"genres": [
+{
+"genreId": "4406",
+"name": "Drama",
+"url": "https:\/\/itunes.apple.com\/us\/genre\/id4406"
+}
+],
+"url": "https:\/\/itunes.apple.com\/us\/movie\/serenity-2019\/id1449065699"
+},
+{
+"artistName": "Clint Eastwood",
+"id": "1445079491",
+"releaseDate": "2018-12-14",
+"name": "The Mule (2018)",
+"kind": "movie",
+"copyright": "\u00a92018 Warner Bros. Entertainment Inc., Imperative Entertainment, LLC and BRON Creative USA, Corp. ",
+"contentAdvisoryRating": "Explicit",
+"artworkUrl100": "https:\/\/is3-ssl.mzstatic.com\/image\/thumb\/Video128\/v4\/29\/d5\/9a\/29d59ac3-8ca6-d312-2327-23cb283d4744\/pr_source.lsr\/200x200bb.png",
+"genres": [
+{
+"genreId": "4406",
+"name": "Drama",
+"url": "https:\/\/itunes.apple.com\/us\/genre\/id4406"
+}
+],
+"url": "https:\/\/itunes.apple.com\/us\/movie\/the-mule-2018\/id1445079491"
+},
+{
+"artistName": "Joe Penna",
+"id": "1450025105",
+"releaseDate": "2019-02-01",
+"name": "Arctic",
+"kind": "movie",
+"copyright": "\u00a9 2018 Bleecker Street Media LLC. All Rights Reserved.",
+"artworkUrl100": "https:\/\/is1-ssl.mzstatic.com\/image\/thumb\/Video124\/v4\/f2\/e5\/82\/f2e5820c-2d58-e117-836a-d30d8341f903\/89J96_MLNA_Arctic_2000x3000.lsr\/200x200bb.png",
+"genres": [
+{
+"genreId": "4416",
+"name": "Thriller",
+"url": "https:\/\/itunes.apple.com\/us\/genre\/id4416"
+}
+],
+"url": "https:\/\/itunes.apple.com\/us\/movie\/arctic\/id1450025105"
+}
+]
+}
+}
