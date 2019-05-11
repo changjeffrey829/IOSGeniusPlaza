@@ -10,6 +10,8 @@ import UIKit
 
 class MovieCell: UITableViewCell {
     
+    var stackLeadingAnchor: NSLayoutConstraint?
+    
     var viewModel: MediaViewModel? {
         didSet {
             guard let vm = viewModel else {return}
@@ -34,15 +36,27 @@ class MovieCell: UITableViewCell {
         stackView.distribution = .equalCentering
         addSubview(stackView)
         stackView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 8).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 8).isActive = true
+        stackLeadingAnchor = stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
+        stackLeadingAnchor?.isActive = true
+        stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let isPortrait = UIDevice.current.orientation.isPortrait
+        if isPortrait {
+            stackLeadingAnchor?.constant = 8
+        } else {
+            stackLeadingAnchor?.constant = 50
+        }
     }
     
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "User Name"
         label.clipsToBounds = true
+        label.numberOfLines = 0
         return label
     }()
     

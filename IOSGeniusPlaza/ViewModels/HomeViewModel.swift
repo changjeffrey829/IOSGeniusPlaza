@@ -10,7 +10,7 @@ import UIKit
 
 protocol MovieDatasource {
     func loadMovies(completion: @escaping (Result<[RawMovieData], Error>) ->())
-    func loadImage(urlString: String, completion: @escaping (Result<UIImage, Error>) -> ())
+//    func loadImage(urlString: String, completion: @escaping (Result<UIImage, Error>) -> ())
 }
 
 class HomeViewModel {
@@ -28,19 +28,6 @@ class HomeViewModel {
                 completion(err)
             case .success(let rawMovieData):
                 self.movies = rawMovieData
-                
-//                let movies = rawMovieData.map({ (rawData) -> MediaModel in
-//                    self.movieDatasource.loadImage(urlString: rawData.artworkUrl100, completion: { (result) in
-//                        var movieImage: UIImage
-//                        switch result {
-//                        case .failure(_):
-//                            movieImage = #imageLiteral(resourceName: "smashBall.svg")
-//                        case .success(let image):
-//                            movieImage = image
-//                        }
-//                    })
-//                    return MediaModel(name: rawData.name, image: movieImage, mediaType: .movie)
-//                })
                 completion(nil)
             }
         }
