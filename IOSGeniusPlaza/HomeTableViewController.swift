@@ -42,7 +42,6 @@ class HomeTableViewController: UITableViewController {
     }
     
     //MARK:- SETUP
-    
     private func setupSegmentController() {
         headerView.segmentedControl.addTarget(self, action: #selector(selectAMediaType), for: .valueChanged)
     }

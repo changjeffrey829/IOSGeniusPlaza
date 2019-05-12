@@ -8,6 +8,7 @@
 
 import Foundation
 
+//This protocol is created to allow easy mock URLSession
 protocol DataSessionProtocol {
     func loadData(from url: URL,
                   completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)

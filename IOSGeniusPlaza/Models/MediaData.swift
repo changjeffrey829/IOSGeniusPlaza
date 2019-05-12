@@ -8,14 +8,6 @@
 
 import Foundation
 
-struct RawNetworkResponse: Decodable {
-    let feed: Feed
-}
-
-struct Feed: Decodable {
-    let results: [MediaData]
-}
-
 struct MediaData: Decodable {
     let artistName: String
     let name: String

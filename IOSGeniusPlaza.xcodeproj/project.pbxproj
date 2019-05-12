@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04BB0BF52287F11400DA8083 /* IntergrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB0BF42287F11400DA8083 /* IntergrationTests.swift */; };
+		04BB0BF72287FF1B00DA8083 /* RawDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB0BF62287FF1B00DA8083 /* RawDataResponse.swift */; };
 		04F0732A2284BD0800B807ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F073292284BD0800B807ED /* AppDelegate.swift */; };
 		04F0732C2284BD0800B807ED /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0732B2284BD0800B807ED /* HomeTableViewController.swift */; };
 		04F073312284BD0900B807ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F073302284BD0900B807ED /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		04BB0BF42287F11400DA8083 /* IntergrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntergrationTests.swift; sourceTree = "<group>"; };
+		04BB0BF62287FF1B00DA8083 /* RawDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawDataResponse.swift; sourceTree = "<group>"; };
 		04F073262284BD0800B807ED /* IOSGeniusPlaza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSGeniusPlaza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F073292284BD0800B807ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F0732B2284BD0800B807ED /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -121,8 +123,9 @@
 			isa = PBXGroup;
 			children = (
 				04F073492284BD8400B807ED /* NetworkService.swift */,
-				04F0734C2284C5B800B807ED /* MediaType.swift */,
+				04BB0BF62287FF1B00DA8083 /* RawDataResponse.swift */,
 				04F0735D2286BC7300B807ED /* MediaData.swift */,
+				04F0734C2284C5B800B807ED /* MediaType.swift */,
 				04F07354228550F700B807ED /* MockSession.swift */,
 				04F073502285407200B807ED /* MockJSON.txt */,
 			);
@@ -258,6 +261,7 @@
 				04F0734A2284BD8400B807ED /* NetworkService.swift in Sources */,
 				04F0734D2284C5B800B807ED /* MediaType.swift in Sources */,
 				04F0732A2284BD0800B807ED /* AppDelegate.swift in Sources */,
+				04BB0BF72287FF1B00DA8083 /* RawDataResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
