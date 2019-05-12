@@ -22,5 +22,4 @@ class MockSession: DataSessionProtocol {
         }
         completionHandler(data, response, error)
     }
-    
 }

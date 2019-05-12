@@ -9,12 +9,12 @@
 import XCTest
 @testable import IOSGeniusPlaza
 
-class IOSGeniusPlazaTests: XCTestCase {
+class UnitTesting: XCTestCase {
     
-    func testGetMovies() {
+    func testLoadMediaFromServer() {
         let mock = MockSession()
-        let sut = NetworkService(session: mock)
-        sut.getMovies { (result) in
+        let sut = NetworkService(mediaType: .movie, session: mock)
+        sut.loadMedia { (result) in
             switch result {
             case .failure(_):
                 XCTFail()
@@ -23,4 +23,6 @@ class IOSGeniusPlazaTests: XCTestCase {
             }
         }
     }
+    
+    
 }

@@ -8,40 +8,38 @@
 
 import UIKit
 
-protocol MovieDatasource {
-    func loadMovies(completion: @escaping (Result<[RawMovieData], Error>) ->())
-//    func loadImage(urlString: String, completion: @escaping (Result<UIImage, Error>) -> ())
-}
-
 class HomeViewModel {
-    private let movieDatasource: MovieDatasource
-    private var movies = [RawMovieData]()
+    private let mediaService: MediaProtocol
+    private var mediaObjects = [MediaData]()
     static let cellID = "cellID"
-    init(movieLoadable: MovieDatasource = NetworkService()) {
-        self.movieDatasource = movieLoadable
+    static let headerHeight: CGFloat = 75
+    static let cellHeight: CGFloat = 100
+    
+    init(mediaService: MediaProtocol) {
+        self.mediaService = mediaService
     }
     
-    func loadMovies(completion: @escaping (Error?) -> ()) {
-        movieDatasource.loadMovies { [unowned self] (result) in
+    func loadMedia(completion: @escaping (MediaLoadingError?) -> ()) {
+        mediaService.loadMedia { [unowned self] (result) in
             switch result {
             case .failure(let err):
                 completion(err)
             case .success(let rawMovieData):
-                self.movies = rawMovieData
+                self.mediaObjects = rawMovieData
                 completion(nil)
             }
         }
     }
     
-    func moviesCount() -> Int {
-        return movies.count
+    func mediaCount() -> Int {
+        return mediaObjects.count
     }
     
-    func MediaViewModelAtIndex(_ index: Int) -> MediaViewModel {
-        return MediaViewModel(rawMediaModel: movies[index])
+    func mediaViewModelAtIndex(_ index: Int) -> MediaViewModel {
+        return MediaViewModel(mediaData: mediaObjects[index], networkService: mediaService)
     }
     
-    func movieAtIndex(_ index: Int) -> RawMovieData {
-        return movies[index]
+    func mediaAtIndex(_ index: Int) -> MediaData {
+        return mediaObjects[index]
     }
 }

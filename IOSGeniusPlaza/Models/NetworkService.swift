@@ -8,36 +8,39 @@
 
 import UIKit
 
-struct RawNetworkResponse: Decodable {
-    let feed: Feed
-}
-struct Feed: Decodable {
-    let results: [RawMovieData]
+enum MediaLoadingError: Error {
+    case imageError
+    case mediaError
 }
 
-struct RawMovieData: Decodable {
-    let artistName: String
-    let name: String
-    let artworkUrl100 : String
+protocol MediaProtocol {
+    func loadMedia(completion: @escaping (Result<[MediaData], MediaLoadingError>) ->())
+    func loadImage(urlString: String, completion: @escaping (Result<UIImage, MediaLoadingError>) -> ())
 }
 
-struct NetworkService: MovieDatasource {
+struct NetworkService: MediaProtocol {
     
     private let session: DataSessionProtocol
-    private let movieAPI = "https://rss.itunes.apple.com/api/v1/us/movies/top-movies/all/10/explicit.json"
+    private var mediaAPI: String
     
-    init(session: DataSessionProtocol = URLSession.shared) {
+    init(mediaType: MediaType, session: DataSessionProtocol = URLSession.shared) {
         self.session = session
+        switch mediaType {
+        case .movie:
+            mediaAPI = "https://rss.itunes.apple.com/api/v1/us/movies/top-movies/all/10/explicit.json"
+        case .podCast:
+            mediaAPI = "https://rss.itunes.apple.com/api/v1/us/podcasts/top-podcasts/all/10/explicit.json"
+        }
     }
     
-    func loadImage(urlString: String, completion: @escaping (Result<UIImage, Error>) -> ()) {
+    func loadImage(urlString: String, completion: @escaping (Result<UIImage, MediaLoadingError>) -> ()) {
         guard let url = URL(string: urlString) else {
-//            completion(.failure(SearchError.unableToFindUser))
+            completion(.failure(MediaLoadingError.imageError))
             return}
         
         session.loadData(from: url) { (data, response, err) in
             if err != nil {
-//                completion(.failure(SearchError.unableToFindUser))
+                completion(.failure(MediaLoadingError.imageError))
                 return
             }
             
@@ -45,27 +48,31 @@ struct NetworkService: MovieDatasource {
                 let imageData = data,
                 let photoImage = UIImage(data: imageData)
                 else {
-//                    completion(.failure(SearchError.unableToFindUser))
+                    completion(.failure(MediaLoadingError.imageError))
                     return }
             completion(.success(photoImage))
         }
     }
     
-    func loadMovies(completion: @escaping (Result<[RawMovieData], Error>) -> ()) {
-        guard let url = URL(string: movieAPI) else {fatalError()}
+    func loadMedia(completion: @escaping (Result<[MediaData], MediaLoadingError>) -> ()) {
+        
+        guard let url = URL(string: mediaAPI) else {
+            completion(.failure(MediaLoadingError.mediaError))
+            return
+        }
         
         session.loadData(from: url) { (data, response, err) in
-            if let err = err {
-                completion(.failure(err))
+            if err != nil {
+                completion(.failure(MediaLoadingError.mediaError))
                 return
             }
             do {
                 let decoder = JSONDecoder()
                 guard let data = data else {return}
-                let networkObjects = try decoder.decode(RawNetworkResponse.self, from: data)
-                completion(.success(networkObjects.feed.results))
-            } catch let err {
-                completion(.failure(err))
+                let rawNetworkResponse = try decoder.decode(RawNetworkResponse.self, from: data)
+                completion(.success(rawNetworkResponse.feed.results))
+            } catch {
+                completion(.failure(MediaLoadingError.mediaError))
             }
         }
     }

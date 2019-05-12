@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04BB0BF52287F11400DA8083 /* IntergrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB0BF42287F11400DA8083 /* IntergrationTests.swift */; };
 		04F0732A2284BD0800B807ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F073292284BD0800B807ED /* AppDelegate.swift */; };
 		04F0732C2284BD0800B807ED /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0732B2284BD0800B807ED /* HomeTableViewController.swift */; };
 		04F073312284BD0900B807ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F073302284BD0900B807ED /* Assets.xcassets */; };
-		04F073342284BD0900B807ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F073322284BD0900B807ED /* LaunchScreen.storyboard */; };
-		04F0733F2284BD0900B807ED /* IOSGeniusPlazaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0733E2284BD0900B807ED /* IOSGeniusPlazaTests.swift */; };
+		04F0733F2284BD0900B807ED /* UnitTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0733E2284BD0900B807ED /* UnitTesting.swift */; };
 		04F0734A2284BD8400B807ED /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F073492284BD8400B807ED /* NetworkService.swift */; };
-		04F0734D2284C5B800B807ED /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0734C2284C5B800B807ED /* Movie.swift */; };
+		04F0734D2284C5B800B807ED /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0734C2284C5B800B807ED /* MediaType.swift */; };
 		04F0734F2284E46D00B807ED /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0734E2284E46D00B807ED /* HomeViewModel.swift */; };
 		04F073512285407200B807ED /* MockJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04F073502285407200B807ED /* MockJSON.txt */; };
 		04F07353228542C300B807ED /* URLSessionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F07352228542C300B807ED /* URLSessionExt.swift */; };
-		04F07355228550F700B807ED /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F07354228550F700B807ED /* Mock.swift */; };
-		04F073572285542900B807ED /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F073562285542900B807ED /* MovieCell.swift */; };
+		04F07355228550F700B807ED /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F07354228550F700B807ED /* MockSession.swift */; };
+		04F073572285542900B807ED /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F073562285542900B807ED /* MediaCell.swift */; };
 		04F0735A22855ABA00B807ED /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0735922855ABA00B807ED /* MediaViewModel.swift */; };
+		04F0735C2286B15300B807ED /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0735B2286B15300B807ED /* HeaderView.swift */; };
+		04F0735E2286BC7300B807ED /* MediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0735D2286BC7300B807ED /* MediaData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,23 +35,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04BB0BF42287F11400DA8083 /* IntergrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntergrationTests.swift; sourceTree = "<group>"; };
 		04F073262284BD0800B807ED /* IOSGeniusPlaza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSGeniusPlaza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F073292284BD0800B807ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F0732B2284BD0800B807ED /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		04F073302284BD0900B807ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04F073332284BD0900B807ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04F073352284BD0900B807ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F0733A2284BD0900B807ED /* IOSGeniusPlazaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSGeniusPlazaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04F0733E2284BD0900B807ED /* IOSGeniusPlazaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSGeniusPlazaTests.swift; sourceTree = "<group>"; };
+		04F0733E2284BD0900B807ED /* UnitTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTesting.swift; sourceTree = "<group>"; };
 		04F073402284BD0900B807ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F073492284BD8400B807ED /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		04F0734C2284C5B800B807ED /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		04F0734C2284C5B800B807ED /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
 		04F0734E2284E46D00B807ED /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		04F073502285407200B807ED /* MockJSON.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MockJSON.txt; sourceTree = "<group>"; };
 		04F07352228542C300B807ED /* URLSessionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExt.swift; sourceTree = "<group>"; };
-		04F07354228550F700B807ED /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
-		04F073562285542900B807ED /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		04F07354228550F700B807ED /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
+		04F073562285542900B807ED /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
 		04F0735922855ABA00B807ED /* MediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModel.swift; sourceTree = "<group>"; };
+		04F0735B2286B15300B807ED /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		04F0735D2286BC7300B807ED /* MediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +98,10 @@
 				04F073292284BD0800B807ED /* AppDelegate.swift */,
 				04F07352228542C300B807ED /* URLSessionExt.swift */,
 				04F0732B2284BD0800B807ED /* HomeTableViewController.swift */,
+				04F0735F2286BC9500B807ED /* Views */,
 				04F0735822855AA700B807ED /* ViewModels */,
 				04F0734B2284C5AC00B807ED /* Models */,
 				04F073302284BD0900B807ED /* Assets.xcassets */,
-				04F073322284BD0900B807ED /* LaunchScreen.storyboard */,
 				04F073352284BD0900B807ED /* Info.plist */,
 			);
 			path = IOSGeniusPlaza;
@@ -106,7 +110,8 @@
 		04F0733D2284BD0900B807ED /* IOSGeniusPlazaTests */ = {
 			isa = PBXGroup;
 			children = (
-				04F0733E2284BD0900B807ED /* IOSGeniusPlazaTests.swift */,
+				04F0733E2284BD0900B807ED /* UnitTesting.swift */,
+				04BB0BF42287F11400DA8083 /* IntergrationTests.swift */,
 				04F073402284BD0900B807ED /* Info.plist */,
 			);
 			path = IOSGeniusPlazaTests;
@@ -115,11 +120,11 @@
 		04F0734B2284C5AC00B807ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				04F0734C2284C5B800B807ED /* Movie.swift */,
-				04F07354228550F700B807ED /* Mock.swift */,
-				04F073502285407200B807ED /* MockJSON.txt */,
 				04F073492284BD8400B807ED /* NetworkService.swift */,
-				04F073562285542900B807ED /* MovieCell.swift */,
+				04F0734C2284C5B800B807ED /* MediaType.swift */,
+				04F0735D2286BC7300B807ED /* MediaData.swift */,
+				04F07354228550F700B807ED /* MockSession.swift */,
+				04F073502285407200B807ED /* MockJSON.txt */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +136,15 @@
 				04F0735922855ABA00B807ED /* MediaViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		04F0735F2286BC9500B807ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04F0735B2286B15300B807ED /* HeaderView.swift */,
+				04F073562285542900B807ED /* MediaCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F073512285407200B807ED /* MockJSON.txt in Resources */,
-				04F073342284BD0900B807ED /* LaunchScreen.storyboard in Resources */,
 				04F073312284BD0900B807ED /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,12 +249,14 @@
 			files = (
 				04F0734F2284E46D00B807ED /* HomeViewModel.swift in Sources */,
 				04F0732C2284BD0800B807ED /* HomeTableViewController.swift in Sources */,
-				04F073572285542900B807ED /* MovieCell.swift in Sources */,
+				04F0735E2286BC7300B807ED /* MediaData.swift in Sources */,
+				04F073572285542900B807ED /* MediaCell.swift in Sources */,
 				04F07353228542C300B807ED /* URLSessionExt.swift in Sources */,
-				04F07355228550F700B807ED /* Mock.swift in Sources */,
+				04F07355228550F700B807ED /* MockSession.swift in Sources */,
+				04F0735C2286B15300B807ED /* HeaderView.swift in Sources */,
 				04F0735A22855ABA00B807ED /* MediaViewModel.swift in Sources */,
 				04F0734A2284BD8400B807ED /* NetworkService.swift in Sources */,
-				04F0734D2284C5B800B807ED /* Movie.swift in Sources */,
+				04F0734D2284C5B800B807ED /* MediaType.swift in Sources */,
 				04F0732A2284BD0800B807ED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F0733F2284BD0900B807ED /* IOSGeniusPlazaTests.swift in Sources */,
+				04F0733F2284BD0900B807ED /* UnitTesting.swift in Sources */,
+				04BB0BF52287F11400DA8083 /* IntergrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,17 +279,6 @@
 			targetProxy = 04F0733B2284BD0900B807ED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		04F073322284BD0900B807ED /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04F073332284BD0900B807ED /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		04F073412284BD0900B807ED /* Debug */ = {

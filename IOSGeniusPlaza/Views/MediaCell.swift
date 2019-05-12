@@ -8,14 +8,14 @@
 
 import UIKit
 
-class MovieCell: UITableViewCell {
+class MediaCell: UITableViewCell {
     
     var stackLeadingAnchor: NSLayoutConstraint?
     
     var viewModel: MediaViewModel? {
         didSet {
             guard let vm = viewModel else {return}
-            nameLabel.text = vm.rawMediaModel.name
+            nameLabel.attributedText = vm.getMediaName()
             vm.getImagefromURL { [unowned self] (result) in
                 DispatchQueue.main.async {
                     switch result {
@@ -31,6 +31,21 @@ class MovieCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupStackView()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let isPortrait = UIDevice.current.orientation.isPortrait
+        if isPortrait {
+            stackLeadingAnchor?.constant = 16
+        } else {
+            stackLeadingAnchor?.constant = 40
+        }
+    }
+    
+    //MARK:- SETUP
+    private func setupStackView() {
         let stackView = UIStackView(arrangedSubviews: [nameLabel, mediaimageView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalCentering
@@ -42,16 +57,7 @@ class MovieCell: UITableViewCell {
         stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let isPortrait = UIDevice.current.orientation.isPortrait
-        if isPortrait {
-            stackLeadingAnchor?.constant = 8
-        } else {
-            stackLeadingAnchor?.constant = 50
-        }
-    }
-    
+    //MARK:- UI OBJECTS
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "User Name"
@@ -62,18 +68,11 @@ class MovieCell: UITableViewCell {
     
     var mediaimageView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         iv.layer.cornerRadius = 10
         iv.image = #imageLiteral(resourceName: "smashBall.svg")
         return iv
-    }()
-    
-    let typeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Type"
-        label.clipsToBounds = true
-        return label
     }()
     
     required init?(coder aDecoder: NSCoder) {
