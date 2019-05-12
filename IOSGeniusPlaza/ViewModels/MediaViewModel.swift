@@ -19,7 +19,7 @@ class MediaViewModel {
     
     private var mediaData: MediaData
     
-    private (set) var mediaType: MediaType
+    private var mediaType: MediaType
     
     init(mediaType: MediaType, mediaData: MediaData, networkService: MediaProtocol) {
         self.networkService = networkService

@@ -23,3 +23,13 @@ class MockSession: DataSessionProtocol {
         completionHandler(data, response, error)
     }
 }
+
+class MockErrorSession: DataSessionProtocol {
+    var data: Data?
+    var response: URLResponse?
+    var error: Error?
+    func loadData(from url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        error = MediaLoadingError.mediaError
+        completionHandler(data, response, error)
+    }
+}

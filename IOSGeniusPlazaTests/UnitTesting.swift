@@ -24,5 +24,17 @@ class UnitTesting: XCTestCase {
         }
     }
     
+    func testErrorLoadMediaFromServer() {
+        let mock = MockErrorSession()
+        let sut = NetworkService(mediaType: .movie, session: mock)
+        sut.loadMedia { (result) in
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, MediaLoadingError.mediaError)
+            case .success(_):
+                XCTFail()
+            }
+        }
+    }
     
 }
