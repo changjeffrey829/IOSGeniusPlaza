@@ -16,6 +16,7 @@ class MediaCell: UITableViewCell {
         didSet {
             guard let vm = viewModel else {return}
             nameLabel.attributedText = vm.getMediaName()
+            mediaTypeLabel.attributedText = vm.getMediaTypeString()
             vm.getImagefromURL { [unowned self] (result) in
                 DispatchQueue.main.async {
                     switch result {
@@ -46,7 +47,7 @@ class MediaCell: UITableViewCell {
     
     //MARK:- SETUP
     private func setupStackView() {
-        let stackView = UIStackView(arrangedSubviews: [nameLabel, mediaimageView])
+        let stackView = UIStackView(arrangedSubviews: [nameLabel, mediaTypeLabel, mediaimageView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalCentering
         addSubview(stackView)
@@ -60,8 +61,7 @@ class MediaCell: UITableViewCell {
     //MARK:- UI OBJECTS
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "User Name"
-        label.clipsToBounds = true
+        label.text = "Media Name"
         label.numberOfLines = 0
         return label
     }()
@@ -73,6 +73,12 @@ class MediaCell: UITableViewCell {
         iv.layer.cornerRadius = 10
         iv.image = #imageLiteral(resourceName: "smashBall.svg")
         return iv
+    }()
+    
+    let mediaTypeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Media Type"
+        return label
     }()
     
     required init?(coder aDecoder: NSCoder) {

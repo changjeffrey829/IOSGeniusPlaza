@@ -17,20 +17,29 @@ class MediaViewModel {
     
     private var networkService: MediaProtocol
     
-    private var rawMediaModel: MediaData
+    private var mediaData: MediaData
     
-    init(mediaData: MediaData, networkService: MediaProtocol) {
+    private (set) var mediaType: MediaType
+    
+    init(mediaType: MediaType, mediaData: MediaData, networkService: MediaProtocol) {
         self.networkService = networkService
-        self.rawMediaModel = mediaData
+        self.mediaData = mediaData
+        self.mediaType = mediaType
     }
     
     func getMediaName() -> NSAttributedString {
-        let attributedString = getAttributedString(text: rawMediaModel.name)
+        let attributedString = getAttributedString(text: mediaData.name)
+        return attributedString
+    }
+    
+    func getMediaTypeString() -> NSAttributedString {
+        let text = mediaType == .movie ? "Movie" : "PodCast"
+        let attributedString = getAttributedString(text: text)
         return attributedString
     }
     
     func getImagefromURL(completion: @escaping (Result<UIImage, MediaLoadingError>) -> ()) {
-        let urlString = rawMediaModel.artworkUrl100
+        let urlString = mediaData.artworkUrl100
         lastUrlUsedToLoadImage = urlString
         if let cachedimage = imageCache[urlString] {
             completion(.success(cachedimage))
@@ -44,7 +53,7 @@ class MediaViewModel {
     private func getAttributedString(text: String) -> NSAttributedString {
         let fgColor = UIColor.brown
         if let font = UIFont(name: "MarkerFelt-Wide", size: 16) {
-            let attributedString = NSMutableAttributedString(string: rawMediaModel.name, attributes: [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: fgColor])
+            let attributedString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: fgColor])
             return attributedString
         } else {
             let attributedString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: fgColor])

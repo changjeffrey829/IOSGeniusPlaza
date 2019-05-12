@@ -14,6 +14,7 @@ enum MediaLoadingError: Error {
 }
 
 protocol MediaProtocol {
+    var mediaType: MediaType {get}
     func loadMedia(completion: @escaping (Result<[MediaData], MediaLoadingError>) ->())
     func loadImage(urlString: String, completion: @escaping (Result<UIImage, MediaLoadingError>) -> ())
 }
@@ -22,9 +23,11 @@ struct NetworkService: MediaProtocol {
     
     private let session: DataSessionProtocol
     private var mediaAPI: String
+    private (set) var mediaType: MediaType
     
     init(mediaType: MediaType, session: DataSessionProtocol = URLSession.shared) {
         self.session = session
+        self.mediaType = mediaType
         switch mediaType {
         case .movie:
             mediaAPI = "https://rss.itunes.apple.com/api/v1/us/movies/top-movies/all/10/explicit.json"

@@ -36,7 +36,7 @@ class HomeViewModel {
     }
     
     func mediaViewModelAtIndex(_ index: Int) -> MediaViewModel {
-        return MediaViewModel(mediaData: mediaObjects[index], networkService: mediaService)
+        return MediaViewModel(mediaType: mediaService.mediaType, mediaData: mediaObjects[index], networkService: mediaService)
     }
     
     func mediaAtIndex(_ index: Int) -> MediaData {
