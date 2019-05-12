@@ -11,7 +11,7 @@ import XCTest
 
 class IntergrationTests: XCTestCase {
 
-    func testIntergration() {
+    func testShowMovieAttributedString() {
         let mockSession = MockSession()
         let networkService = NetworkService(mediaType: .movie, session: mockSession)
         let moviesViewModel = HomeViewModel(mediaService: networkService)
@@ -28,5 +28,4 @@ class IntergrationTests: XCTestCase {
             }
         }
     }
-
 }

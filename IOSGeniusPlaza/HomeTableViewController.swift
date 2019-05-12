@@ -25,6 +25,35 @@ class HomeTableViewController: UITableViewController {
         tableView.reloadData()
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        if headerView.segmentedControl.selectedSegmentIndex == 0 {
+            transitingToMovieTitle()
+        } else {
+            transitingToPodCastTitle()
+        }
+        
+    }
+    
+    //MARK:- ANIMATION
+    private func transitingToMovieTitle() {
+        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        UIView.transition(with: headerView.podCastTitleLabel, duration: 0.3, options: transitionOptions, animations: { [unowned self] in
+            self.headerView.bringSubviewToFront(self.headerView.movieTitleLabel)
+            self.headerView.movieTitleLabel.isHidden = false
+        })
+        UIView.transition(with: headerView.movieTitleLabel, duration: 0.3, options: transitionOptions, animations: nil) { [unowned self] (_) in
+            self.headerView.podCastTitleLabel.isHidden = true
+        }
+    }
+    
+    private func transitingToPodCastTitle() {
+        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        UIView.transition(with: headerView.movieTitleLabel, duration: 0.3, options: transitionOptions, animations: { [unowned self] in
+            self.headerView.bringSubviewToFront(self.headerView.podCastTitleLabel)
+            self.headerView.podCastTitleLabel.isHidden = false
+        })
+        UIView.transition(with: headerView.podCastTitleLabel, duration: 0.3, options: transitionOptions, animations: nil) { [unowned self] (_) in
+            self.headerView.movieTitleLabel.isHidden = true
+        }
     }
     
     private func createErrorAlertController(networkError: MediaLoadingError) -> UIAlertController {

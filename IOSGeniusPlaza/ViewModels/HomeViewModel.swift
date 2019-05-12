@@ -12,7 +12,7 @@ class HomeViewModel {
     private let mediaService: MediaProtocol
     private var mediaObjects = [MediaData]()
     static let cellID = "cellID"
-    static let headerHeight: CGFloat = 75
+    static let headerHeight: CGFloat = 100
     static let cellHeight: CGFloat = 100
     
     init(mediaService: MediaProtocol) {
