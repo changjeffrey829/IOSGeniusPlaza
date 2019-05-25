@@ -10,9 +10,15 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
     
-    var movieViewModel: HomeViewModel?
-    var podCastViewModel: HomeViewModel?
+    var movieViewModel: HomeViewModel
+    var podCastViewModel: HomeViewModel
     let headerView = HeaderView()
+    
+    init(movieViewModel: HomeViewModel, podCastViewModel: HomeViewModel) {
+        self.movieViewModel = movieViewModel
+        self.podCastViewModel = podCastViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,9 +87,8 @@ class HomeTableViewController: UITableViewController {
     }
     
     private func setupPodCastViewModel() {
-        let networkService = NetworkService(mediaType: .podCast)
-        podCastViewModel = HomeViewModel(mediaService: networkService)
-        podCastViewModel?.loadMedia(completion: { [unowned self] (error) in
+        
+        podCastViewModel.loadMedia(completion: { [unowned self] (error) in
             if let error = error {
                 let alert = self.createErrorAlertController(networkError: error)
                 self.present(alert, animated: true, completion: nil)
@@ -92,9 +97,8 @@ class HomeTableViewController: UITableViewController {
     }
     
     private func setupMovieViewModels() {
-        let networkService = NetworkService(mediaType: .movie)
-        movieViewModel = HomeViewModel(mediaService: networkService)
-        movieViewModel?.loadMedia(completion: { [unowned self] (error) in
+        
+        movieViewModel.loadMedia(completion: { [unowned self] (error) in
             if let error = error {
                 let alert = self.createErrorAlertController(networkError: error)
                 self.present(alert, animated: true, completion: nil)
@@ -104,6 +108,10 @@ class HomeTableViewController: UITableViewController {
                 }
             }
         })
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -120,14 +128,14 @@ extension HomeTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let index = headerView.segmentedControl.selectedSegmentIndex
-        let count = index == 0 ? movieViewModel?.mediaCount() : podCastViewModel?.mediaCount()
-        return count ?? 0
+        let count = index == 0 ? movieViewModel.mediaCount() : podCastViewModel.mediaCount()
+        return count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewModel.cellID, for: indexPath) as? MediaCell
         let index = headerView.segmentedControl.selectedSegmentIndex
-        let viewModel = index == 0 ? movieViewModel?.mediaViewModelAtIndex(indexPath.row) : podCastViewModel?.mediaViewModelAtIndex(indexPath.row)
+        let viewModel = index == 0 ? movieViewModel.mediaViewModelAtIndex(indexPath.row) : podCastViewModel.mediaViewModelAtIndex(indexPath.row)
         cell?.viewModel = viewModel
         return cell ?? UITableViewCell()
     }

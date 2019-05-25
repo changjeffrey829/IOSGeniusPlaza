@@ -16,8 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
         window?.makeKeyAndVisible()
-        window?.rootViewController = HomeTableViewController()
+        let homeTableVC = createHomeViewController()
+        window?.rootViewController = homeTableVC
         return true
+    }
+    
+    private func createHomeViewController() -> HomeTableViewController {
+        let movieNetworkService = NetworkService(mediaType: .movie)
+        let movieViewModel = HomeViewModel(mediaService: movieNetworkService)
+        let podCastNetworkService = NetworkService(mediaType: .podCast)
+        let podCastViewModel = HomeViewModel(mediaService: podCastNetworkService)
+        return HomeTableViewController(movieViewModel: movieViewModel, podCastViewModel: podCastViewModel)
     }
 }
 
