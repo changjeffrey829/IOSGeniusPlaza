@@ -13,7 +13,7 @@ class UnitTesting: XCTestCase {
     
     func testLoadMediaFromServer() {
         let mock = MockSession()
-        let sut = NetworkService(mediaType: .movie, session: mock)
+        let sut = NetworkService(mediaType: .app, session: mock)
         sut.loadMedia { (result) in
             switch result {
             case .failure(_):
@@ -26,7 +26,7 @@ class UnitTesting: XCTestCase {
     
     func testErrorLoadMediaFromServer() {
         let mock = MockErrorSession()
-        let sut = NetworkService(mediaType: .movie, session: mock)
+        let sut = NetworkService(mediaType: .app, session: mock)
         sut.loadMedia { (result) in
             switch result {
             case .failure(let error):

@@ -13,7 +13,7 @@ class IntergrationTests: XCTestCase {
 
     func testShowMovieAttributedString() {
         let mockSession = MockSession()
-        let networkService = NetworkService(mediaType: .movie, session: mockSession)
+        let networkService = NetworkService(mediaType: .app, session: mockSession)
         let moviesViewModel = HomeViewModel(mediaService: networkService)
         moviesViewModel.loadMedia { (error) in
             if error != nil {

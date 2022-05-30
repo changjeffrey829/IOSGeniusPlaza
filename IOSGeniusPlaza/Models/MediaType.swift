@@ -9,6 +9,6 @@
 import UIKit
 
 enum MediaType {
-    case movie
+    case app
     case podCast
 }

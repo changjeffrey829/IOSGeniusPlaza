@@ -33,7 +33,7 @@ class MediaViewModel {
     }
     
     func getMediaTypeString() -> NSAttributedString {
-        let text = mediaType == .movie ? "Movie" : "PodCast"
+        let text = mediaType == .app ? "Movie" : "PodCast"
         let attributedString = getAttributedString(text: text)
         return attributedString
     }
