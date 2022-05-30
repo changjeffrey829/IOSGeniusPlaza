@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func createHomeViewController() -> HomeTableViewController {
-        let movieNetworkService = NetworkService(mediaType: .movie)
+        let movieNetworkService = NetworkService(mediaType: .app)
         let movieViewModel = HomeViewModel(mediaService: movieNetworkService)
         let podCastNetworkService = NetworkService(mediaType: .podCast)
         let podCastViewModel = HomeViewModel(mediaService: podCastNetworkService)

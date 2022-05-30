@@ -63,7 +63,7 @@ class HeaderView: UIView {
     }()
     
     lazy var segmentedControl: UISegmentedControl = {
-        let sc = UISegmentedControl(items: ["Top 10 Movies", "Top 10 Podcast"])
+        let sc = UISegmentedControl(items: ["Top 10 Apps", "Top 10 Podcast"])
         sc.translatesAutoresizingMaskIntoConstraints = false
         sc.selectedSegmentIndex = 0
         sc.backgroundColor = .white

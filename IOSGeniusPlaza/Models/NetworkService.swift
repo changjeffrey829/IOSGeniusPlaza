@@ -29,10 +29,10 @@ struct NetworkService: MediaProtocol {
         self.session = session
         self.mediaType = mediaType
         switch mediaType {
-        case .movie:
-            mediaAPI = "https://rss.itunes.apple.com/api/v1/us/movies/top-movies/all/10/explicit.json"
+        case .app:
+            mediaAPI = "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/10/apps.json"
         case .podCast:
-            mediaAPI = "https://rss.itunes.apple.com/api/v1/us/podcasts/top-podcasts/all/10/explicit.json"
+            mediaAPI = "https://rss.applemarketingtools.com/api/v2/us/podcasts/top/10/podcasts.json"
         }
     }
     
